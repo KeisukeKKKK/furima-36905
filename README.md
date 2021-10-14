@@ -1,24 +1,27 @@
-# README
+## users table
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+|Column|Type|Options|
+|name||password|
+|email|
+|password|
 
-Things you may want to cover:
+（ここに追記していく）
 
-* Ruby version
+## Product informationtable
 
-* System dependencies
+|Column|Type|Options|
+|image|
+|text|-------|
+（ここに追記していく）
 
-* Configuration
+## Purchase record table
 
-* Database creation
+|Column|Type|Options|
+|------|----|-------|
+（ここに追記していく）
 
-* Database initialization
+## Shipping information table
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+|Column|Type|Options|
+|------|----|-------|
+（ここに追記していく）
