@@ -1,17 +1,17 @@
 ## users table
 
 |Column|Type|Options|
-|name||password|
-|email|
-|password|
+|name||string|
+|email|string|
+|password|string|
 
 （ここに追記していく）
 
 ## Product informationtable
 
 |Column|Type|Options|
-|image|
-|text|-------|
+|image|string|
+|text|text|
 （ここに追記していく）
 
 ## Purchase record table
