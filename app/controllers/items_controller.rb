@@ -11,7 +11,6 @@ class ItemsController < ApplicationController
 
   def create
   end
-  binding.pry
 
 
   def move_to_index
