@@ -32,7 +32,7 @@
 | user               | references | null: false, foreign_key: true |
 
 ### Association
- belongs_to :users
+ belongs_to :user
  has_one :purchase_record
 
 
@@ -40,13 +40,13 @@
 
 | Column              | Type       | Options     |
 | ------------------- | ---------- | ----------- |
-| users               | references | null: false, foreign_key: true |
-| products            | references | null: false, foreign_key: true |
+| user               | references | null: false, foreign_key: true |
+| product            | references | null: false, foreign_key: true |
 
 ### Association
- belongs_to :users
- has_one :shippings
- belongs_to :products
+ belongs_to :user
+ has_one :shipping
+ belongs_to :product
 
 ## Shippings table
 
@@ -61,4 +61,4 @@
 | purchase_record     | references | null: false, foreign_key: true |
 
 ### Association
- belongs_to :purchase_records
+ belongs_to :purchase_record
