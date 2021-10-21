@@ -11,30 +11,26 @@
 | last_name_kana     | string | null: false |
 | first_name_kana    | string | null: false |
 
+### Association
 
+- belongs_to :Product_information :Purchase_record 
+- 
 
 ## Product informationtable
 
 | Column              | Type    | Options     |
 | ------------------- | ------- | ----------- |
 | product_name        | string  | null: false |
-| product_image       | string  | null: false |
 | product_description | text    | null: false |
-| category            | integer | null: false |
-| product_condition   | integer | null: false |
-| shipping_charges    | integer | null: false |
-| shipping_area       | integer | null: false |
-| days_to_ship        | integer | null: false |
+| category_id            | integer | null: false |
+| product_condition_id   | integer | null: false |
+| shipping_charges_id    | integer | null: false |
+| shipping_area_id       | integer | null: false |
+| days_to_ship_id        | integer | null: false |
 | price               | integer | null: false |
 
-
-## Purchase information table
-| Column             | Type   | Options     |
-| ------------------ | ------ | ----------- |
-| buyer              | string | null: false |
-| product_name       | string | null: false |
-| price              | integer | null: false |
-
+### Association
+ has_many :users
 
 
 ## Purchase record table
@@ -44,15 +40,21 @@
 | Purchase_information| references | null: false |
 | Product_information | references | null: false |
 
+### Association
+ has_many :users
+ belongs_to :Shipping_information
 
 ## Shipping information table
 
 | Column              | Type    | Options                            |
 | ------------------- | ------- | ---------------------------------- |
-| prefectures         | integer | null: false                        |
+| prefectures_id      | integer | null: false                        |
 | municipalities      | string  | null: false                        |
 | address             | string  | null: false                        |
 | postal_code         | string  | null: false                        |
 | building_name       |         |                                    |
 | telephone_number    | string  | null: false                        |
-| Purchase_record     | references | null: false, foreign_key: true |
+| purchase_record     | references | null: false, foreign_key: true |
+
+### Association
+ has_one :Purchase_record
