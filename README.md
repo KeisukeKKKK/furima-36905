@@ -13,10 +13,11 @@
 
 ### Association
 
-- belongs_to :Product_information :Purchase_record 
+- has_many :Product_information 
+  has_many :Purchase_record 
 - 
 
-## Product informationtable
+## Products table
 
 | Column              | Type    | Options     |
 | ------------------- | ------- | ----------- |
@@ -24,31 +25,32 @@
 | product_description | text    | null: false |
 | category_id            | integer | null: false |
 | product_condition_id   | integer | null: false |
-| shipping_charges_id    | integer | null: false |
+| shipping_charge_id     | integer | null: false |
 | shipping_area_id       | integer | null: false |
 | days_to_ship_id        | integer | null: false |
 | price               | integer | null: false |
+| user               | references | null: false, foreign_key: true |
 
 ### Association
  has_many :users
 
 
-## Purchase record table
+## Purchase records table
 
 | Column              | Type       | Options     |
 | ------------------- | ---------- | ----------- |
-| Purchase_information| references | null: false |
-| Product_information | references | null: false |
+| purchase_information| references | null: false, foreign_key: true |
+| product_information | references | null: false, foreign_key: true |
 
 ### Association
  has_many :users
- belongs_to :Shipping_information
+ belongs_to :Shippings
 
-## Shipping information table
+## Shippings table
 
 | Column              | Type    | Options                            |
 | ------------------- | ------- | ---------------------------------- |
-| prefectures_id      | integer | null: false                        |
+| shipping_area_id    | integer | null: false                        |
 | municipalities      | string  | null: false                        |
 | address             | string  | null: false                        |
 | postal_code         | string  | null: false                        |
@@ -57,4 +59,4 @@
 | purchase_record     | references | null: false, foreign_key: true |
 
 ### Association
- has_one :Purchase_record
+ has_one :Purchase_records
