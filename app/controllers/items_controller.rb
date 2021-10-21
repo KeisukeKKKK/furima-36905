@@ -11,7 +11,6 @@ class ItemsController < ApplicationController
 
   def create
   end
- 
 
 
   def move_to_index
