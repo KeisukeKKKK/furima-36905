@@ -13,8 +13,8 @@
 
 ### Association
 
-- has_many :Product_information 
-  has_many :Purchase_record 
+- has_many :products 
+  has_many :purchase_records 
 - 
 
 ## Products table
@@ -32,19 +32,21 @@
 | user               | references | null: false, foreign_key: true |
 
 ### Association
- has_many :users
+ belongs_to :users
+ has_one :purchase_record
 
 
 ## Purchase records table
 
 | Column              | Type       | Options     |
 | ------------------- | ---------- | ----------- |
-| purchase_information| references | null: false, foreign_key: true |
-| product_information | references | null: false, foreign_key: true |
+| users               | references | null: false, foreign_key: true |
+| products            | references | null: false, foreign_key: true |
 
 ### Association
- has_many :users
- belongs_to :Shippings
+ belongs_to :users
+ has_one :shippings
+ belongs_to :products
 
 ## Shippings table
 
@@ -59,4 +61,4 @@
 | purchase_record     | references | null: false, foreign_key: true |
 
 ### Association
- has_one :Purchase_records
+ belongs_to :purchase_records
