@@ -13,23 +13,23 @@
 
 ### Association
 
-- has_many :products 
+- has_many :items 
   has_many :purchase_records 
 - 
 
-## Products table
+## items table
 
-| Column              | Type    | Options     |
-| ------------------- | ------- | ----------- |
-| product_name        | string  | null: false |
-| product_description | text    | null: false |
-| category_id            | integer | null: false |
-| product_condition_id   | integer | null: false |
-| shipping_charge_id     | integer | null: false |
-| shipping_area_id       | integer | null: false |
-| days_to_ship_id        | integer | null: false |
-| price               | integer | null: false |
-| user               | references | null: false, foreign_key: true |
+| Column             | Type           | Options                        |
+| ------------------ | -------------- | ------------------------------ |
+| price              | integer        | null: false                    |
+| item_name          | string         | null: false                    |
+| description_item   | text           | null: false                    |
+| detail_category_id | integer        | null: false                    |
+| detail_status_id   | integer        | null: false                    |
+| payment_method_id  | integer        | null: false                    |
+| shipment_source_id | integer        | null: false                    |
+| scheduled_day_id   | integer        | null: false                    |
+| user               | references     | null: false, foreign_key: true |
 
 ### Association
  belongs_to :user
@@ -46,7 +46,7 @@
 ### Association
  belongs_to :user
  has_one :shipping
- belongs_to :product
+ belongs_to :item
 
 ## Shippings table
 
