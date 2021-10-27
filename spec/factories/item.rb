@@ -3,8 +3,8 @@ FactoryBot.define do
     item_name {"商品名"}
     description_item {"あア亜"}
     category_id {2}
-    pstatus_id {3}
-    shippingcharge_id {2}
+    status_id {3}
+    shipment_id {2}
     shippingarea_id {3}
     deliverydatedays_id {2}
     price {'500'}
