@@ -77,11 +77,15 @@ RSpec.describe Item, type: :model do
         expect(@item.errors.full_messages).to include("Price can't be blank")
       end
 
-      # 価格は、¥300~¥9,999,999の間のみ保存可能であること
-      it 'priceが¥300~¥9,999,999の間意外では登録できない' do
+      it '値段が300円以下であった場合' do
         @item.price = "200"
         @item.valid?
-        expect(@item.errors.full_messages).to include("Price is not included in the list")
+        expect(@item.errors.full_messages).to include("Price must be greater than or equal to 300")
+      end
+      it '値段が1000万位上であった場合' do
+        @item.price = "10000000"
+        @item.valid?
+        expect(@item.errors.full_messages).to include("Price must be less than or equal to 9999999")
       end
 
       # 価格は半角数値のみ保存可能であること
