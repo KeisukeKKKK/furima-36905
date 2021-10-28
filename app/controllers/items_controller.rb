@@ -37,11 +37,11 @@ end
     end
   end
 
-  #def destroy
-    #item = Item.find(params[:id])
-    #item.destroy
-    #redirect_to root_path
-  #end
+  def destroy
+    item = Item.find(params[:id])
+    item.destroy
+    redirect_to root_path
+  end
 
   private
 
@@ -50,12 +50,12 @@ end
        :shipment_id, :scheduled_id, :image).merge(user_id: current_user.id)
   end
 
-  #def move_to_index
-    #@item = Item.find(params[:id])
-    #unless user_signed_in? && current_user.id == @item.user_id
-      #redirect_to action: :index
-    #end
-  #end
+  def move_to_index
+    @item = Item.find(params[:id])
+    unless user_signed_in? && current_user.id == @item.user_id
+      redirect_to action: :index
+    end
+  end
 
   def set_item
     @item = Item.find(params[:id])
