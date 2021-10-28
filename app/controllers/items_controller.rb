@@ -1,6 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create, ]
-    #:edit, :update]
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update]
   #before_action :move_to_index, only: [:edit, :destroy]
   before_action :set_item, only: [:edit, :show, :update]
 
@@ -26,17 +25,17 @@ class ItemsController < ApplicationController
 end
 
 
-  #def edit
-  #end 
+  def edit
+  end 
 
-  #def update
-   # @item.update(item_params)
-    #if @item.valid? 
-     # redirect_to item_path(@item.id)
-    #else
-      #render 'edit'
-    #end
-  #end
+  def update
+    @item.update(item_params)
+    if @item.valid? 
+      redirect_to item_path(@item.id)
+    else
+      render 'edit'
+    end
+  end
 
   #def destroy
     #item = Item.find(params[:id])
