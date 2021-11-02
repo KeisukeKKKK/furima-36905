@@ -29,8 +29,7 @@ end
   end 
 
   def update
-    @item.update(item_params)
-    if @item.valid? 
+    if @item.update(item_params)
       redirect_to item_path(@item.id)
     else
       render 'edit'
@@ -51,7 +50,7 @@ end
   end
 
   def move_to_index
-    unless user_signed_in? && current_user.id == @item.user_id
+    unless current_user.id == @item.user_id
       redirect_to action: :index
     end
   end
