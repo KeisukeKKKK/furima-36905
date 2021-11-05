@@ -8,5 +8,6 @@ window.addEventListener('load', () => {
 
     const sales_profit = document.getElementById("profit");
     sales_profit.innerHTML = new Intl.NumberFormat().format(Math.round(inputValue - Math.floor(inputValue * 0.1)));
+    if (!priceGet){ return false;}
   });
 });
