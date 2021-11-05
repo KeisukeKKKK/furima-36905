@@ -5,8 +5,8 @@ FactoryBot.define do
     category_id {2}
     status_id {3}
     shipment_id {2}
-    shippingarea_id {3}
-    deliverydatedays_id {2}
+    payment_id {3}
+    scheduled_id  {2}
     price {'500'}
 
     association :user
