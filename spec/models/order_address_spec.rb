@@ -15,7 +15,6 @@ RSpec.describe OrderAddress, type: :model do
       end
       it '建物名が空でも購入できる' do
         @order_address.building_name = ''
-        @order_address.valid?
         expect(@order_address).to be_valid
       end
     end

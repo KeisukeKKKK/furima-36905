@@ -13,7 +13,7 @@ class OrderAddress
     validates :token
   end
 
-  validates :telephone_number, format: {with: /\A0\d{9,10}\z/, message:"is invalid"}
+  validates :telephone_number, format: {with: /\A0\d{10,11}\z/, message:"is invalid"}
 
   with_options numericality: { other_than: 1 } do
     validates :shipment_id
